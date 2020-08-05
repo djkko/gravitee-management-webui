@@ -22,7 +22,7 @@ function DialogSubscriptionCreateController(
   ApplicationService: ApplicationService, ApiService: ApiService) {
   'ngInject';
   this.api = api;
-  this.plans = plans;
+  this.plans = plans.filter(p => !p.general_conditions);
   this.selectedApp = null;
   this.selectedPlan = null;
   this.plansWithSubscriptions = [];
